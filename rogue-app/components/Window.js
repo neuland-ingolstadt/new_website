@@ -1,3 +1,5 @@
+'use client';
+
 /*import React, { useState } from 'react';
 
 const Window = () => {
@@ -52,7 +54,7 @@ export default Window;*/
 import React, { useState } from 'react';
 import Tabs from './Tabs';
 
-const Window = () => {
+const Window = ({ children }) => {
   const [isMaximized, setIsMaximized] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
@@ -125,7 +127,7 @@ const Window = () => {
         </div>
       </div>
       <div>
-        Window Content
+                {children}
         <Tabs />
       </div>
     </div>
