@@ -1,58 +1,6 @@
 'use client';
 
-/*import React, { useState } from 'react';
-
-const Window = () => {
-  const [isMaximized, setIsMaximized] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleClose = () => {
-    setIsMinimized(false);
-    setIsMaximized(false);
-  };
-
-  const handleMaximize = () => {
-    setIsMaximized(!isMaximized);
-  };
-
-  const handleMinimize = () => {
-    setIsMinimized(!isMinimized);
-  };
-
-  const handleDrag = (event) => {
-    setPosition({ x: event.clientX, y: event.clientY });
-  };
-
-  const windowStyles = {
-    position: 'absolute',
-    top: position.y,
-    left: position.x,
-    width: isMaximized ? '100%' : '500px',
-    height: isMaximized ? '100%' : '500px',
-    background: 'white',
-    boxShadow: '0 0 5px rgba(0, 0, 0, 0.3)',
-    zIndex: 1,
-  };
-
-  return (
-    <div style={windowStyles} onDrag={handleDrag}>
-      <div>
-        <button onClick={handleClose}>Close</button>
-        <button onClick={handleMaximize}>Maximize</button>
-        <button onClick={handleMinimize}>Minimize</button>
-      </div>
-      <div>
-        Window Content
-      </div>
-    </div>
-  );
-};
-
-export default Window;*/
-
 import React, { useState } from 'react';
-import Tabs from './Tabs';
 
 const Window = ({ children }) => {
   const [isMaximized, setIsMaximized] = useState(false);
@@ -127,8 +75,7 @@ const Window = ({ children }) => {
         </div>
       </div>
       <div>
-                {children}
-        <Tabs />
+        {children}
       </div>
     </div>
   );
