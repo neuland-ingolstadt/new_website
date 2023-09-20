@@ -1,84 +1,26 @@
 'use client';
 
 import React, { useState } from 'react';
+import Draggable from 'react-draggable';
 
-const Window = ({ children }) => {
-  const [isMaximized, setIsMaximized] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleClose = () => {
-    setIsMinimized(false);
-    setIsMaximized(false);
-  };
-
-  const handleMaximize = () => {
-    setIsMaximized(!isMaximized);
-  };
-
-  const handleMinimize = () => {
-    setIsMinimized(!isMinimized);
-  };
-
-  const handleDragStart = (event) => {
-    setIsDragging(true);
-  };
-
-  const handleDragEnd = (event) => {
-    setIsDragging(false);
-  };
-
-  const handleDrag = (event) => {
-    if (isDragging) {
-      setPosition({
-        x: position.x + event.movementX,
-        y: position.y + event.movementY,
-      });
-    }
-  };
-
-  const windowStyles = {
-    position: 'absolute',
-    top: position.y,
-    left: position.x,
-    width: isMaximized ? '100%' : '500px',
-    height: isMaximized ? '100%' : '500px',
-    background: 'white',
-    boxShadow: '0 0 5px rgba(0, 0, 0, 0.3)',
-    zIndex: 1,
-    userSelect: 'none',
-  };
-
-  const headerStyles = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px',
-    background: '#ccc',
-    cursor: 'move',
-  };
-
+class Window extends React.Component {
   return (
-    <div style={windowStyles}>
-      <div
-        style={headerStyles}
-        onMouseDown={handleDragStart} // Hinzufügen des onDragStart-Handlers
-        onMouseUp={handleDragEnd} // Hinzufügen des onDragEnd-Handlers
-        onMouseMove={handleDrag} // Hinzufügen des onDrag-Handlers
-      >
-        <div>Fenster-Titel</div>
-        <div>
-          <button onClick={handleClose}>Close</button>
-          <button onClick={handleMaximize}>Maximize</button>
-          <button onClick={handleMinimize}>Minimize</button>
-        </div>
-      </div>
+    <Draggable
+      axis="x"
+      handle=".handle"
+      defaultPosition={{x: 0, y: 0}}
+      position={null}
+      grid={[25, 25]}
+      scale={1}
+      onStart={this.handleStart}
+      onDrag={this.handleDrag}
+      onStop={this.handleStop}>
       <div>
-        {children}
+        <div className="handle">Drag from here</div>
+        <div>This readme is really dragging on...</div>
       </div>
-    </div>
+    </Draggable>
   );
-};
+}
 
 export default Window;

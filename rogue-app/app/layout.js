@@ -2,6 +2,13 @@ import '../styles/globals.css'
 import { Inter } from 'next/font/google'
 import Window from '@/components/Window'
 import Tabs from '@/components/Tabs'
+/* import Draggable from 'react-draggable'; // The default
+import {DraggableCore} from 'react-draggable'; // <DraggableCore> */
+import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
+
+// CommonJS
+/* let Draggable = require('react-draggable'); */
+/* let DraggableCore = Draggable.DraggableCore; */
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,10 +21,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Window>
-          <Tabs />
-          {children}
-        </Window>
+        <Draggable grid={[10, 10]} axis='y' bounds='parent'>
+          Hello
+        </Draggable>
       </body>
     </html>
   )
