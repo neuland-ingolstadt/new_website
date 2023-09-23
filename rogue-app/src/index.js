@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './component/Header';
-import BottomNav from './component/BottomNav';
+import BottomNav from './component/Fooder';
 import MiddleWindow from './component/MiddleWindow';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
@@ -15,4 +15,3 @@ root.render(
     <BottomNav />
   </React.StrictMode>
 );
-

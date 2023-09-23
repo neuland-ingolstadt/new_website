@@ -1,6 +1,6 @@
 export default function Tab1() {
     return (
-    <div className="Tab" style={{margin:"0px"}}>
+    <div className="Tab" style={{}}>
         <h1>About_us</h1>
       <p>
         Wir bieten den Studierenden eine Plattform, um sich auszutauschen, um Projekte zu realisieren und um ihr Wissen zu erweitern.

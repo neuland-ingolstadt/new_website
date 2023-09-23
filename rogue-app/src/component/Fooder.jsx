@@ -1,7 +1,11 @@
+import React from 'react';
+
 
 export default function BottomNav(){
-return  <ul className="nav justify-content-center" style={{backgroundColor: "white"}}>
-            <li className="nav-item" >
+return (
+      <footer className="page-footer py-1" style={{backgroundColor: "white",position:"fixed", left:"0px",right:"0px",bottom:"0px",color: "black"}}>
+        <ul className="nav justify-content-center">
+          <li className="nav-item" >
               <a className="nav-link" style={{color: "black"}} href="https://pad.informatik.sexy/s/Satzung">Satzung</a>
             </li>
             <li className="nav-item">
@@ -23,5 +27,7 @@ return  <ul className="nav justify-content-center" style={{backgroundColor: "whi
               <a className="nav-link" style={{color: "black"}} href="https://www.instagram.com/neuland_ingolstadt/">Instagram</a>
             </li>
         </ul>
-     
-    }
+              <div className="footer-copyright text-center" >© 2023 Copyright</div>
+      </footer>
+  )
+}
