@@ -1,10 +1,9 @@
 import React from "react";
 import {Container, Row, Tabs, Tab} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Tab1 from "./Tab1_about_us";
-import Tab2 from "./Tab2_projekt";
-import Tab3 from "./Tab3_members";
-
+import Tab1 from "../Tab1_about_us";
+import Tab2 from "../Tab2_projekt";
+import Tab3 from "../Tab3_members";
 
 const BsTabs = () => {
     return (
@@ -23,7 +22,6 @@ const BsTabs = () => {
                     </Tab>
                 </Tabs>
             </Row>
-          
         </Container>
     </div>
     )
