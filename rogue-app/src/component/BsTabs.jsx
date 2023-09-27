@@ -8,9 +8,9 @@ import Tab3 from "../Tab3_members";
 
 const BsTabs = () => {
     return (
-    <div className="container-d" >
+    <div className="" >
         <Draggable>
-            <Container className="py-4">
+            <Container className="container">
                     <Row className="justify-content-centerborder && border border-black && rounded-0">
                     <Tabs justify variant="pills" defaultActiveKey="tab-1" className="rounded-0" >
                         <Tab eventKey="tab-1" title="About_us.html" className="border border-black && rounded-0" style={{margin:"0px"}}>
