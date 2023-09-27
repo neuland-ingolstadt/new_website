@@ -1,25 +1,17 @@
-import React, {useState} from "react";
 import Draggable from "react-draggable";
-import Sponsor from "../Sponsor";
+import HideObjekt from "./HideObjekt";
 
-export default function DraggableSupporter() {
+
+export default function DraggableContainer() {
   return(
     <div>
-      <HideObjekt/>
+      <Draggable>
+        <div>
+          <HideObjekt/>
+        </div>
+      </Draggable>
     </div>
   );
 }
 
-function HideObjekt(){
-  const [dp, setDp] = useState(false);
-  return (
-    <Draggable>
-      <div><button type="button" onClick={() => setDp(!dp)}> X </button>
-        {dp && <div>
-          <Sponsor/>
-        </div>}
-      </div>
-    </Draggable>
-  );
-}
 

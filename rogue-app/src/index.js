@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import MiddleWindow from './component/MiddleWindow';
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NeulandLogo from './images/Logos/logo_dark.png'
+import DraggableContainer from './component/DraggableContainer';
+import BsTabs from './component/BsTabs';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,9 +23,10 @@ root.render(
     </div>
    </header>
 
-  <MiddleWindow />
+  <BsTabs/>
+  <DraggableContainer/>
   
-    <footer className="page-footer py-1" style={{backgroundColor: "white",position:"fixed", left:"0px",right:"0px",bottom:"0px",color: "black"}}>
+    <footer className="page-footer py-1" style={{backgroundColor: "white",position:"fixed", left:"0px",right:"0px",bottom:"0px"}}>
         <ul className="nav justify-content-center">
           <li className="nav-item" >
               <a className="nav-link" style={{color: "black"}} href="https://pad.informatik.sexy/s/Satzung">Satzung</a>
@@ -46,7 +50,7 @@ root.render(
               <a className="nav-link" style={{color: "black"}} href="https://www.instagram.com/neuland_ingolstadt/">Instagram</a>
             </li>
         </ul>
-        <div className="footer-copyright text-center p-1,5" >© 2023 Copyright</div>
+        <div className="footer-copyright text-center p-1,5" style={{color: "black"}}>© 2023 Copyright</div>
       </footer>
   </React.StrictMode>
 );
